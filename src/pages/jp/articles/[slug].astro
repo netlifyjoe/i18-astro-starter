@@ -1,6 +1,7 @@
 ---
 import { contentfulClient } from '../../../lib/contentful';
 import type { EntryFieldTypes } from 'contentful';
+import Layout from '../../../layouts/Layout.astro';
 
 interface Blog {
     contentTypeId: 'PostFeedLayout';
@@ -28,8 +29,8 @@ export async function getStaticPaths() {
 const { title } = Astro.props;
 ---
 
-<body>
+<Layout title={title}>
     <section>
         <h2>{title}</h2>
     </section>
-</body>
+</Layout>
