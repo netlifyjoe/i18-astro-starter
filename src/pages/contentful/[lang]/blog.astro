@@ -1,0 +1,34 @@
+---
+import { contentfulClient } from '../../../lib/contentful';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import type { EntryFieldTypes } from 'contentful';
+
+interface Blog {
+    contentTypeId: 'PostFeedLayout';
+    fields: {
+        title: EntryFieldTypes.Text;
+    };
+}
+
+export async function getStaticPaths() {
+    const entries = await contentfulClient.getEntries<Blog>({
+        content_type: 'PostFeedLayout'
+    });
+
+    return entries.items.map(({ fields }) => {
+        console.log(fields.slug, fields.locale);
+        return {
+            params: { slug: fields.slug, lang: fields.locale },
+            props: { title: fields.title }
+        };
+    });
+}
+
+const { title } = Astro.props;
+---
+
+<body>
+    <section>
+        <h2>{title}</h2>
+    </section>
+</body>

@@ -23,5 +23,10 @@
     "typescript.tsdk": "node_modules/typescript/lib",
     "files.associations": {
         "*.css": "tailwindcss",
+    },
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#55190F",
+        "titleBar.activeBackground": "#762314",
+        "titleBar.activeForeground": "#FEF8F8"
     }
 }

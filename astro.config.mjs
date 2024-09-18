@@ -12,5 +12,21 @@ export default defineConfig({
         })
     ],
     output: 'hybrid',
-    adapter: netlify()
+    adapter: netlify(),
+    i18n: {
+        defaultLocale: "en",
+        locales: ["en", "jp", "es"],
+        // routing: "manual"
+        fallback: {
+            es: "en",
+            jp: "en"
+        },
+        routing: {
+            fallbackType: "rewrite",
+        }
+    },
+    // domains: {
+    //     jp: "https://fr.example.com",
+    // },
+
 });

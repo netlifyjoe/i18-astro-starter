@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContextAlert from '../../components/ContextAlert.astro';
+import Markdown from '../../components/Markdown.astro';
+
+const explainer = `
+Un sitio web de Astro puede ir mucho más allá de las páginas estáticas: en la plataforma adecuada.
+
+Netlify admite no solo Streaming SSR y rápido Edge Middleware, pero también [revalidación bajo demanda](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) y [stale- while -revalidar](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
+Cualquier página o datos se pueden reconstruir solo cuando sea necesario, sin que los visitantes del sitio vean afectado el rendimiento.`;
+---
+
+<Layout title="Welcome to Astro.">
+    <h1 class="mb-10">Iniciador de plataforma Netlify para Astro</h1>
+    <Markdown content={explainer} class="text-lg mb-10" />
+</Layout>
