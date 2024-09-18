@@ -1,0 +1,19 @@
+---
+export const languages = {
+    jp: 'Japanese',
+    es: 'Spanish'
+};
+---
+
+<ul>
+    <li>
+        <a href={`/`}>English</a>
+    </li>
+    {
+        Object.entries(languages).map(([lang, label]) => (
+            <li>
+                <a href={`/${lang}/`}>{label}</a>
+            </li>
+        ))
+    }
+</ul>
