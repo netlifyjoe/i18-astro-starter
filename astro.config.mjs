@@ -3,7 +3,6 @@ import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 
-// https://astro.build/config
 export default defineConfig({
     integrations: [
         react(),
@@ -25,8 +24,5 @@ export default defineConfig({
             fallbackType: "rewrite",
         }
     },
-    // domains: {
-    //     jp: "https://fr.example.com",
-    // },
-
+    trailingSlash: 'never'
 });

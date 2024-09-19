@@ -19,7 +19,7 @@ export const userMiddleware = defineMiddleware(async (ctx, next) => {
 
 
 export const onRequest = sequence(
-  // userMiddleware,
+  userMiddleware,
   middleware({
     prefixDefaultLocale: false,
     redirectToDefaultLocale: false,

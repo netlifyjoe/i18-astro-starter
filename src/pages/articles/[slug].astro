@@ -1,37 +1,17 @@
 ---
-import { contentfulClient } from '../../lib/contentful';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import type { EntryFieldTypes } from 'contentful';
-import Layout from '../../layouts/Layout.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 
-interface Blog {
-    contentTypeId: 'PostFeedLayout';
-    fields: {
-        title: EntryFieldTypes.Text;
-        slug: EntryFieldTypes.Text;
-        locale: EntryFieldTypes.Text;
-    };
-}
+import { getStaticPaths as blogPaths } from '../../lib/blog';
 
 export async function getStaticPaths() {
-    const entries = await contentfulClient.getEntries<Blog>({
-        content_type: 'PostFeedLayout'
-    });
-
-    return entries.items.map(({ fields }) => {
-        console.log(fields.slug, fields.locale);
-        return {
-            params: { slug: fields.slug, lang: fields.locale },
-            props: { title: fields.title }
-        };
-    });
+    return blogPaths();
 }
 
 const { title } = Astro.props;
 ---
 
-<Layout title={title}>
+<BlogLayout title={title}>
     <section>
         <h2>{title}</h2>
     </section>
-</Layout>
+</BlogLayout>
