@@ -1,7 +1,7 @@
 # A redirect rule with many of the supported properties
 [[redirects]]
-  from = "/*"
-  to = "/jp.semoneytronic.com/:splat"
+  from = "/jp/*"
+  to = "/i18-astro-starter-jp.netlify.app"
 
   status = 301
 
