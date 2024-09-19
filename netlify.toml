@@ -1,7 +1,7 @@
 # A redirect rule with many of the supported properties
 [[redirects]]
-  from = "/jp/*"
-  to = "/jp.semoneytronic.com"
+  from = "/*"
+  to = "/jp.semoneytronic.com/:splat"
 
   status = 301
 
