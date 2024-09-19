@@ -1,7 +1,7 @@
 ---
-import BlogLayout from '../../layouts/BlogLayout.astro';
+import BlogLayout from '../../../layouts/BlogLayout.astro';
 
-import { getStaticPaths as blogPaths } from '../../lib/blog';
+import { getStaticPaths as blogPaths } from '../../../lib/blog';
 
 export async function getStaticPaths() {
     return blogPaths();
