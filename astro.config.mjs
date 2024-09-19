@@ -3,6 +3,23 @@ import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 
+import dotenv from 'dotenv'
+dotenv.config()
+
+const locales = process.env.SUPPORTED_LOCALES.split(',');
+const defaultLocale = process.env.DEFAULT_LOCALE;
+
+function getLocaleFallback() {
+    let fallback = {};
+    locales.forEach((locale) => {
+        if(locale != defaultLocale) {
+            fallback[locale] = process.env.DEFAULT_LOCALE;
+        }
+    });
+
+    return fallback;
+}
+
 export default defineConfig({
     integrations: [
         react(),
@@ -13,13 +30,10 @@ export default defineConfig({
     output: 'hybrid',
     adapter: netlify(),
     i18n: {
-        defaultLocale: "en",
-        locales: ["en", "jp", "es"],
+        defaultLocale: defaultLocale,
+        locales: locales,
         // routing: "manual"
-        fallback: {
-            es: "en",
-            jp: "en"
-        },
+        fallback: getLocaleFallback(),
         routing: {
             fallbackType: "rewrite",
         }
