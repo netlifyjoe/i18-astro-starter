@@ -7,7 +7,7 @@
   to = "/jp/:splat"
   status = 200
   force = true
-  conditions = {X-Forwarded-Host = "i18-astro-starter-jp.semoneytronic.com"}
+  conditions = {url = "https://i18-astro-starter-jp.semoneytronic.com/*"}
 
 [[headers]]
   for = "/*"
