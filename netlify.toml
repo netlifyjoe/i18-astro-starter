@@ -11,14 +11,14 @@
 # Test rule for Japanese domain
 [[headers]]
   for = "/*"
-  conditions = {Host = ["i18-astro-starter-jp.semoneytronic.com"]}
+  conditions = {host = "i18-astro-starter-jp.semoneytronic.com"}
   [headers.values]
     X-Test-Japanese-Domain = "true"
 
 # Test rule for English domain
 [[headers]]
   for = "/*"
-  conditions = {Host = ["i18-astro-starter.semoneytronic.com"]}
+  conditions = {host = "i18-astro-starter.semoneytronic.com"}
   [headers.values]
     X-Test-English-Domain = "true"
 
@@ -28,4 +28,4 @@
   to = "/jp/:splat"
   status = 200
   force = true
-  conditions = {Host = ["i18-astro-starter-jp.semoneytronic.com"]}
+  conditions = {host = "i18-astro-starter-jp.semoneytronic.com"}
