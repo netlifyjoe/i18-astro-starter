@@ -2,30 +2,14 @@
   publish = "dist"
   command = "npm run build"
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-
-# Test rule for Japanese domain
-[[headers]]
-  for = "/*"
-  conditions = {host = "i18-astro-starter-jp.semoneytronic.com"}
-  [headers.values]
-    X-Test-Japanese-Domain = "true"
-
-# Test rule for English domain
-[[headers]]
-  for = "/*"
-  conditions = {host = "i18-astro-starter.semoneytronic.com"}
-  [headers.values]
-    X-Test-English-Domain = "true"
-
-# Redirect rule for Japanese domain
 [[redirects]]
   from = "/*"
   to = "/jp/:splat"
   status = 200
   force = true
-  conditions = {host = "i18-astro-starter-jp.semoneytronic.com"}
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
