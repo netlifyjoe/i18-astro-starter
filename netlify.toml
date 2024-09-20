@@ -7,9 +7,23 @@
   to = "/jp/:splat"
   status = 200
   force = true
+  conditions = {query = ["lang=jp"]}
 
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
+
+# Test header for Japanese content
+[[headers]]
+  for = "/*"
+  conditions = {query = ["lang=jp"]}
+  [headers.values]
+    X-Content-Type = "japanese"
+
+# Test header for default content
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type = "default"
