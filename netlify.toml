@@ -7,11 +7,11 @@
   to = "/jp/:splat"
   status = 200
   force = true
-  conditions = {hostname = "i18-astro-starter-jp.netlify.app"}
+  conditions = {hostname = "i18-astro-starter-jp.semoneytronic.com"}
 
 [[redirects]]
   from = "/jp/*"
   to = "/:splat"
   status = 200
   force = true
-  conditions = {hostname = "i18-astro-starter.netlify.app"}
+  conditions = {hostname = "i18-astro-starter-jp.semoneytronic.com"}

@@ -11,7 +11,7 @@ export default defineConfig({
         })
     ],
     output: 'hybrid',
-    site: 'https://i18-astro-starter.netlify.app',
+    site: 'https://i18-astro-starter.semoneytronic.com',
     adapter: netlify(),
     i18n: {
         defaultLocale: 'en',
