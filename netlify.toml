@@ -1,14 +1,14 @@
 # A redirect rule with many of the supported properties
 [[redirects]]
   from = "/jp/*"
-  to = "/:splat"
+  to = "/i18-astro-starter-jp.netlify.app"
 
-  status = 301
+  status = 200
 
   # By default, redirects won’t be applied if there’s a file with the same
   # path as the one defined in the `from` property. Setting `force` to `true`
   # will make the redirect rule take precedence over any existing files.
-  force = true
+  # force = true
 
   # Redirect based on conditions including browser language, geolocation,
   # identity role, and/or cookie presence.
