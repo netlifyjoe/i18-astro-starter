@@ -3,13 +3,22 @@ import Logo from '../components/Logo.astro';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { getLocalizedString } from '../lib/nav-links';
 
+// const navItems = [
+//     { linkText: getLocalizedString('home', Astro.currentLocale), href: getRelativeLocaleUrl(Astro.currentLocale, '/') },
+//     { linkText: getLocalizedString('revalidation', Astro.currentLocale), href: getRelativeLocaleUrl(Astro.currentLocale, 'revalidation') },
+//     { linkText: getLocalizedString('imagecdn', Astro.currentLocale), href: getRelativeLocaleUrl(Astro.currentLocale, 'image-cdn') },
+//     { linkText: getLocalizedString('edgefunctions', Astro.currentLocale), href: getRelativeLocaleUrl(Astro.currentLocale, 'edge') },
+//     { linkText: getLocalizedString('blobs', Astro.currentLocale), href: getRelativeLocaleUrl(Astro.currentLocale, 'blobs') },
+//     { linkText: getLocalizedString('articles', Astro.currentLocale), href: getRelativeLocaleUrl(Astro.currentLocale, 'articles') }
+// ];
+
 const navItems = [
-    { linkText: getLocalizedString('home', Astro.currentLocale), href: getRelativeLocaleUrl(Astro.currentLocale, '/') },
-    { linkText: getLocalizedString('revalidation', Astro.currentLocale), href: getRelativeLocaleUrl(Astro.currentLocale, 'revalidation') },
-    { linkText: getLocalizedString('imagecdn', Astro.currentLocale), href: getRelativeLocaleUrl(Astro.currentLocale, 'image-cdn') },
-    { linkText: getLocalizedString('edgefunctions', Astro.currentLocale), href: getRelativeLocaleUrl(Astro.currentLocale, 'edge') },
-    { linkText: getLocalizedString('blobs', Astro.currentLocale), href: getRelativeLocaleUrl(Astro.currentLocale, 'blobs') },
-    { linkText: getLocalizedString('articles', Astro.currentLocale), href: getRelativeLocaleUrl(Astro.currentLocale, 'articles') }
+    { linkText: getLocalizedString('home', Astro.currentLocale), href: '/' },
+    { linkText: getLocalizedString('revalidation', Astro.currentLocale), href: '/revalidation' },
+    { linkText: getLocalizedString('imagecdn', Astro.currentLocale), href: '/image-cdn' },
+    { linkText: getLocalizedString('edgefunctions', Astro.currentLocale), href: '/edge' },
+    { linkText: getLocalizedString('blobs', Astro.currentLocale), href: '/blobs' },
+    { linkText: getLocalizedString('articles', Astro.currentLocale), href: '/articles' }
 ];
 ---
 
