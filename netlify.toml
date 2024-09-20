@@ -10,6 +10,11 @@
   status = 200
 
 [[redirects]]
+  from = "/api/*"
+  to = "/api/:splat"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/jp/:splat"
   status = 200
