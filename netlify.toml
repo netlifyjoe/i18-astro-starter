@@ -11,7 +11,7 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "/api/:splat"
+  to = "/jp/api/:splat"
   status = 200
 
 [[redirects]]
