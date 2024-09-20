@@ -20,5 +20,8 @@ export default defineConfig({
             prefixDefaultLocale: false,
         },
     },
-    trailingSlash: 'never'
+    trailingSlash: 'never',
+    build: {
+        format: 'directory'
+    }
 });
