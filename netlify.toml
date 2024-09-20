@@ -9,12 +9,7 @@
   force = true
   conditions = {hostname = "i18-astro-starter-jp.semoneytronic.com"}
 
-[[redirects]]
-  from = "/jp/*"
-  to = "/:splat"
-  status = 200
-  force = true
-  conditions = {hostname = "i18-astro-starter.semoneytronic.com"}
+
 
 [[headers]]
   for = "/*"
