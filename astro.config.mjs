@@ -10,8 +10,9 @@ export default defineConfig({
             applyBaseStyles: false
         })
     ],
-    output: 'hybrid',
+    output: 'static',
     adapter: netlify(),
+    site: 'https://i18-astro-starter.semoneytronic.com',
     i18n: {
         defaultLocale: 'en',
         locales: ['en', 'jp'],
@@ -23,14 +24,4 @@ export default defineConfig({
     build: {
         format: 'directory'
     },
-    sites: [
-        {
-            name: 'en',
-            url: 'https://i18-astro-starter.semoneytronic.com',
-        },
-        {
-            name: 'jp',
-            url: 'https://i18-astro-starter-jp.semoneytronic.com',
-        },
-    ],
 });
