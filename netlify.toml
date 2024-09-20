@@ -14,4 +14,9 @@
   to = "/:splat"
   status = 200
   force = true
-  conditions = {hostname = "i18-astro-starter-jp.semoneytronic.com"}
+  conditions = {hostname = "i18-astro-starter.semoneytronic.com"}
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
