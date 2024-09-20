@@ -38,5 +38,5 @@ export default defineConfig({
             fallbackType: "rewrite",
         }
     },
-    trailingSlash: 'never'
+    trailingSlash: 'ignore'
 });
