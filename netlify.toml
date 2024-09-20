@@ -7,7 +7,7 @@
   to = "/jp/:splat"
   status = 200
   force = true
-  conditions = {Language = ["jp"], Country = ["JP"]}
+  conditions = {Language = ["jp"]}
 
 
 [[headers]]
