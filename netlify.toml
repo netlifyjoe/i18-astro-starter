@@ -1,0 +1,17 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/jp/:splat"
+  status = 200
+  force = true
+  conditions = {hostname = "i18-astro-starter-jp.netlify.app"}
+
+[[redirects]]
+  from = "/jp/*"
+  to = "/:splat"
+  status = 200
+  force = true
+  conditions = {hostname = "i18-astro-starter.netlify.app"}
