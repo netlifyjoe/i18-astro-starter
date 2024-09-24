@@ -1,33 +1,29 @@
-# # A redirect rule with many of the supported properties
+# A redirect rule with many of the supported properties
 [[redirects]]
-from = "/_astro/*"
-to = "/_astro/:splat"
-status = 200
-
-
-[[redirects]]
-from = "/images/*"
-to = "/images/:splat"
-status = 200
-
+  from = "/_astro/*"
+  to = "/_astro/:splat"
+  status = 200
 
 [[redirects]]
-from = "/api/*"
-to = "/jp/api/:splat"
-status = 200
-
+  from = "/images/*"
+  to = "/images/:splat"
+  status = 200
 
 [[redirects]]
-from = "/*"
-to = "/jp/:splat"
-status = 200
+  from = "/api/*"
+  to = "/jp/api/:splat"
+  status = 200
 
+[[redirects]]
+  from = "/*"
+  to = "/jp/:splat"
+  status = 200
 
-# By default, redirects won’t be applied if there’s a file with the same
-# path as the one defined in the `from` property. Setting `force` to `true`
-# will make the redirect rule take precedence over any existing files.
-# force = true
+  # By default, redirects won’t be applied if there’s a file with the same
+  # path as the one defined in the `from` property. Setting `force` to `true`
+  # will make the redirect rule take precedence over any existing files.
+  # force = true
 
-# Redirect based on conditions including browser language, geolocation,
-# identity role, and/or cookie presence.
-# conditions = {Language = ["jp"], Country = ["JP"]}
+  # Redirect based on conditions including browser language, geolocation,
+  # identity role, and/or cookie presence.
+  # conditions = {Language = ["jp"], Country = ["JP"]}
