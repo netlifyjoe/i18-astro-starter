@@ -3,26 +3,24 @@
 from = "/_astro/*"
 to = "/_astro/:splat"
 status = 200
-# conditions = { Country = ["JP"] }
 
 
 [[redirects]]
 from = "/images/*"
 to = "/images/:splat"
 status = 200
-# conditions = { Country = ["JP"] }
+
 
 [[redirects]]
 from = "/api/*"
 to = "/jp/api/:splat"
 status = 200
-# conditions = { Country = ["JP"] }
+
 
 [[redirects]]
 from = "/*"
 to = "/jp/:splat"
 status = 200
-# conditions = { Country = ["JP"] }
 
 
 # By default, redirects won’t be applied if there’s a file with the same
