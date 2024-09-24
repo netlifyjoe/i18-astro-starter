@@ -3,6 +3,23 @@ import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 
+import dotenv from 'dotenv';
+dotenv.config();
+
+const locales = process.env.SUPPORTED_LOCALES.split(',');
+const defaultLocale = process.env.DEFAULT_LOCALE;
+
+function getLocaleFallback() {
+    let fallback = {};
+    locales.forEach((locale) => {
+        if (locale != defaultLocale) {
+            fallback[locale] = process.env.DEFAULT_LOCALE;
+        }
+    });
+
+    return fallback;
+}
+
 export default defineConfig({
     integrations: [
         react(),
@@ -10,18 +27,16 @@ export default defineConfig({
             applyBaseStyles: false
         })
     ],
-    output: 'static',
+    output: 'hybrid',
     adapter: netlify(),
-    site: 'https://i18-astro-starter.semoneytronic.com',
     i18n: {
-        defaultLocale: 'en',
-        locales: ['en', 'jp'],
+        defaultLocale: defaultLocale,
+        locales: locales,
+        // routing: "manual"
+        fallback: getLocaleFallback(),
         routing: {
-            prefixDefaultLocale: false
+            fallbackType: 'rewrite'
         }
     },
-    trailingSlash: 'ignore',
-    build: {
-        format: 'directory'
-    }
+    trailingSlash: 'ignore'
 });
