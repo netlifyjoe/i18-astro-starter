@@ -17,11 +17,11 @@ export default defineConfig({
         defaultLocale: 'en',
         locales: ['en', 'jp'],
         routing: {
-            prefixDefaultLocale: false,
-        },
+            prefixDefaultLocale: false
+        }
     },
-    trailingSlash: 'never',
+    trailingSlash: 'ignore',
     build: {
         format: 'directory'
-    },
+    }
 });
