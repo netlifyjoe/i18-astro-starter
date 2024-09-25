@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Markdown from '../components/Markdown.astro';
+
+import { getLandingPage } from '../lib/data';
+
+const landingPage = await getLandingPage(`/`);
+console.log(landingPage);
+
+const props = {
+    data: landingPage
+};
+
+const originalVsCdnSnippet = `
+## Connect Query
+
+Call for CMS Data
+~~~jsx
+{
+    contentfulLandingPage(slug: { eq: "/" }) {
+      id
+      slug
+      title
+      contentful_id
+      contentSections {
+        __typename
+        ... on ContentfulHero {
+          id
+          contentful_id
+          title
+          subtitle
+          buttonLabel
+          backgroundColor,
+          ctaSlug
+          image {
+            url
+            title
+          }
+        }
+      }
+    }
+  }  
+~~~
+`;
+---
+
+<Layout title="Image CDN">
+    <div class="flex flex-col gap-12 sm:gap-16">
+        <section class="space-y-8">
+            <h1>Connect</h1>
+        </section>
+        <section>
+            <Markdown content={originalVsCdnSnippet} class="mb-8" />
+        </section>
+        {
+            (
+                <section>
+                    <Markdown
+                        content={`
+## Response
+
+~~~jsx
+${JSON.stringify(props.data)}
+~~~
+`}
+                    />
+                </section>
+            )
+        }
+    </div>
+</Layout>
