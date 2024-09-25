@@ -4,28 +4,28 @@ from = "/_astro/*"
 to = "/_astro/:splat"
 force = true
 status = 200
-conditions = { Country = ["JP"] }
+conditions = { Country = ["US"] }
 
 [[redirects]]
 from = "/images/*"
 to = "/images/:splat"
 status = 200
 force = true
-conditions = { Country = ["JP"] }
+conditions = { Country = ["US"] }
 
 [[redirects]]
 from = "/api/*"
 to = "/jp/api/:splat"
 status = 200
 force = true
-conditions = { Country = ["JP"] }
+conditions = { Country = ["US"] }
 
 [[redirects]]
 from = "/*"
 to = "/jp/:splat"
 status = 200
 force = true
-conditions = { Country = ["JP"] }
+conditions = { Country = ["US"] }
 
 # By default, redirects won’t be applied if there’s a file with the same
 # path as the one defined in the `from` property. Setting `force` to `true`
