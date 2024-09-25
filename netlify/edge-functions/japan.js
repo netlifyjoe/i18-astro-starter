@@ -3,8 +3,10 @@ const japan = async (request, context) => {
 
     if (context.geo?.country?.code === 'US') {
         path = `/jp${path}`;
-        console.log("path", path);
     }
+
+    // Remove trailing slash if it exists
+    path = path.endsWith('/') ? path.slice(0, -1) : path;
 
     return new URL(path, request.url);
 };
