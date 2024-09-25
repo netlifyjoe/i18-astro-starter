@@ -29,5 +29,14 @@ export default defineConfig({
     ],
     output: 'hybrid',
     adapter: netlify(),
+    i18n: {
+        defaultLocale: defaultLocale,
+        locales: locales,
+        // routing: "manual"
+        // fallback: getLocaleFallback(),
+        // routing: {
+        //     fallbackType: 'rewrite'
+        // }
+    },
     trailingSlash: 'ignore'
 });
