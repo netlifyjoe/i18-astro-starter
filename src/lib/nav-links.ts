@@ -7,7 +7,8 @@ export function getLocalizedString(key, language = 'en') {
             imagecdn: 'Image CDN',
             edgefunctions: 'Edge Functions',
             blobs: 'Blobs',
-            articles: 'Articles'
+            articles: 'Articles',
+            connect: 'Connect'
         },
         es: {
             home: 'Hogar',
@@ -15,7 +16,8 @@ export function getLocalizedString(key, language = 'en') {
             imagecdn: 'Imagen CDN',
             edgefunctions: 'Funciones de borde',
             blobs: 'Manchas',
-            articles: 'Artículos'
+            articles: 'Artículos',
+            connect: 'Connect'
         },
         jp: {
             home: '家',
@@ -23,7 +25,8 @@ export function getLocalizedString(key, language = 'en') {
             imagecdn: '画像CDN',
             edgefunctions: 'エッジ機能',
             blobs: 'ブロブ',
-            articles: '記事'
+            articles: '記事',
+            connect: 'Connect'
         }
     };
 
