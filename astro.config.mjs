@@ -38,5 +38,6 @@ export default defineConfig({
             fallbackType: 'rewrite'
         }
     },
-    trailingSlash: 'ignore'
+    trailingSlash: 'ignore',
+    server: { port: 3000 }
 });

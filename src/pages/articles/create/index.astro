@@ -1,0 +1,18 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+
+import Layout from '../../../layouts/Layout.astro';
+
+const articles = await getCollection('articles');
+console.log(articles);
+---
+
+<Layout title="Welcome to Astro.">
+    <h2 class="mb-10">Create Enabled Articles</h2>
+    <ul>
+        {articles.map(p => (
+            <li><a href=`/articles/create/${p.id}`>{p.data.title}</a></li>
+        ))}
+    </ul>
+    <br />
+</Layout>

@@ -5,7 +5,6 @@ import Markdown from '../components/Markdown.astro';
 import { getLandingPage } from '../lib/data';
 
 const landingPage = await getLandingPage(`/`);
-console.log(landingPage);
 
 const props = {
     data: landingPage

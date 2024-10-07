@@ -30,6 +30,8 @@
     "unique-names-generator": "^4.7.1"
   },
   "devDependencies": {
+    "@stackbit/cms-git": "^1.0.15",
+    "@stackbit/types": "^2.1.0",
     "@types/blobshape": "^1.0.3",
     "@types/node": "^20.12.7",
     "daisyui": "^4.10.2",

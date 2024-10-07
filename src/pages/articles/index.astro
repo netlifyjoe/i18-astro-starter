@@ -1,5 +1,6 @@
 ---
 import { contentfulClient } from '../../lib/contentful';
+import { getCollection, getEntry } from 'astro:content';
 import type { EntryFieldTypes } from 'contentful';
 
 import Layout from '../../layouts/Layout.astro';
@@ -16,15 +17,22 @@ interface Blog {
 const entries = await contentfulClient.getEntries<Blog>({
     content_type: 'PostFeedLayout'
 });
+
+const articles = await getCollection('articles');
 ---
 
 <Layout title="Welcome to Astro.">
-    <h1 class="mb-10">Articles</h1>
+    <h2 class="mb-10">Create Enabled Articles</h2>
     <ul>
-        {
-            entries.items.filter((item) => item.fields.locale === 'en').map((item) =>
-                <li><a href=`/articles/${item.fields.slug}`>{item.fields.title}</a></li>
-            )
-        }
+        {articles.map(p => (
+            <li><a href=`/articles/create/${p.id}`>{p.data.title}</a></li>
+        ))}
+    </ul>
+    <br />
+    <h2 class="mb-10">Connect Sourced Articles</h2>
+    <ul>
+        {entries.items.filter((item) => item.fields.locale === 'en').map((item) =>
+            <li><a href=`/articles/${item.fields.slug}`>{item.fields.title}</a></li>
+        )}
     </ul>
 </Layout>
